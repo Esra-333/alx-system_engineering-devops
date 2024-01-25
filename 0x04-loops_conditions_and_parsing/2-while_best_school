@@ -6,5 +6,5 @@ coun = 0
 while [ $coun -lt 10 ]
 do
   echo "Best School"
-  (( count++ ))
+  (( coun++ ))
 done
