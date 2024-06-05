@@ -1,0 +1,1 @@
+I faced a problem in transferring the private site from the local server to the public server, and after making many attempts, I discovered that my php files were not fully compatible, so I downloaded it again from the local server to the public server, while making adjustments for each file and linking it to its databases. Solve the problem
