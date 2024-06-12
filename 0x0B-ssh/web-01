@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 # Connects to server 34.138.32.248 with key in ~/.ssh/school
+eval $("ssh-agent")
 
-ssh -i ~/.ssh/id_rsa ubuntu@54.175.151.73
+ssh-add ~/.ssh/school
+
+ssh ubuntu@3.85.54.249
+
