@@ -1,12 +1,10 @@
-# Fix problem of high amount of requests
+#Fix problem of high amount of requests
 
-exec {'replace':
-  provider => shell,
-  command  => 'sudo sed -i "s/ULIMIT=\"-n 15\"/ULIMIT=\"-n 4096\"/" /etc/default/nginx',
-  before   => Exec['restart'],
+exec { 'set limit to 2000':
+  path    => '/bin',
+  command => "sed -i 's/15/2000/' /etc/default/nginx"
 }
 
-exec {'restart':
-  provider => shell,
-  command  => 'sudo service nginx restart',
+exec { 'reboot nginx':
+  command => '/usr/sbin/service nginx restart'
 }
