@@ -1,10 +1,11 @@
 #Fix problem of high amount of requests
 
-exec { 'set limit to 2000':
-  path    => '/bin',
-  command => "sed -i 's/15/2000/' /etc/default/nginx"
+exec { 'fix --for-nginx:
+  command => '/bin/sed -i "s/15/4096/" /etc/default/nginx,
+  path => '/usr/local/bin/:/bin/',
 }
 
-exec { 'reboot nginx':
-  command => '/usr/sbin/service nginx restart'
+exec { 'nginx-restart':
+  command => '/etc/int.d/nginx restart',
+  parh    => '/etc/int.d/',
 }
