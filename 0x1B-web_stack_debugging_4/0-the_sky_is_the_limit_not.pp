@@ -11,5 +11,5 @@ exec { 'fix --for-nginx:
 # Restart Nginx
 exec { 'nginx-restart':
   command => '/etc/int.d/nginx restart',
-  parh    => '/etc/int.d/'
+  path    => '/etc/int.d/'
 }
